@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ly89gsrsb-go-gitops
+  description: This is GitOps manifest for ly89gsrsb-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=ly89gsrsb-go
+    backstage.io/kubernetes-id: ly89gsrsb-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: ly89gsrsb-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ly89gsrsb-go
